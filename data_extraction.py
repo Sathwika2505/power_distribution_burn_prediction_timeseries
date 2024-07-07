@@ -7,7 +7,7 @@ def loading_data():
 
     bucket_name = 'deeplearning-mlops'
     file_key = 'scada_data.csv'
-
+    df = None
     # Download the file from S3
     try:
         response = s3.get_object(Bucket=bucket_name, Key=file_key)
