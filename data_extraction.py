@@ -22,6 +22,6 @@ def loading_data():
     except Exception as e:
         print(f"Error downloading or reading file from S3: {e}")
         
-        return df
+    return df
 
 loading_data()
