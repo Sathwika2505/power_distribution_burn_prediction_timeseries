@@ -21,8 +21,8 @@ def data_visualization():
     columns = ['Current_Load_kW','Voltage_V','Power_Factor', 'Transformer_Temperature_C', 'Transformer_Oil_Level_Percent', 'Failure_Probability']
     
     # Define start and end times for slicing
-    start = DT.datetime(2019, 1, 1, 0, 0, 0)
-    end = DT.datetime(2019, 1, 31, 23, 0, 0)
+    start = DT.datetime(2021, 1, 1, 0, 0, 0)
+    end = DT.datetime(2021, 1, 31, 23, 0, 0)
     
     for col in columns:
         fig = go.Figure()
@@ -33,8 +33,8 @@ def data_visualization():
         fig.update_yaxes(showgrid=False, zeroline=False)
         fig.write_image(f"series_{col}_2019_January.jpg")
     
-    start = DT.datetime(2019, 2, 1, 1, 0, 0)
-    end = DT.datetime(2019, 2, 28, 23, 0, 0)
+    start = DT.datetime(2021, 2, 1, 1, 0, 0)
+    end = DT.datetime(2021, 2, 28, 23, 0, 0)
     
     for col in columns:
         fig = go.Figure()
