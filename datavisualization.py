@@ -21,29 +21,29 @@ def data_visualization():
     columns = ['Current_Load_kW','Voltage_V','Power_Factor', 'Transformer_Temperature_C', 'Transformer_Oil_Level_Percent', 'Failure_Probability']
     
     # Define start and end times for slicing
-    start = DT.datetime(2021, 1, 1, 0, 0, 0)
-    end = DT.datetime(2021, 1, 15, 23, 0, 0)
+    start = DT.datetime(2023, 10, 1, 0, 0, 0)
+    end = DT.datetime(2023, 10, 15, 23, 0, 0)
     
     for col in columns:
         fig = go.Figure()
         sliced_data = data[(data.index >= start) & (data.index <= end)]
         fig.add_trace(go.Scatter(x=sliced_data.index, y=sliced_data[col], mode='lines', name=col))
-        fig.update_layout(title=f"Plot of {col} January 2021", template='plotly_dark')
+        fig.update_layout(title=f"Plot of {col} October 2023", template='plotly_dark')
         fig.update_xaxes(showgrid=False, zeroline=False)
         fig.update_yaxes(showgrid=False, zeroline=False)
-        fig.write_image(f"series_{col}_2021_January.jpg")
+        fig.write_image(f"series_{col}_2023_Oct.jpg")
     
-    start = DT.datetime(2021, 2, 1, 1, 0, 0)
-    end = DT.datetime(2021, 2, 15, 23, 0, 0)
+    start = DT.datetime(2023, 11, 1, 1, 0, 0)
+    end = DT.datetime(202, 11, 15, 23, 0, 0)
     
     for col in columns:
         fig = go.Figure()
         sliced_data = data[(data.index >= start) & (data.index <= end)]
         fig.add_trace(go.Scatter(x=sliced_data.index, y=sliced_data[col], mode='lines', name=col))
-        fig.update_layout(title=f"Plot of {col} February 2021", template='plotly_dark')
+        fig.update_layout(title=f"Plot of {col} November 2023", template='plotly_dark')
         fig.update_xaxes(showgrid=False, zeroline=False)
         fig.update_yaxes(showgrid=False, zeroline=False)
-        fig.write_image(f"series_{col}_2021_February.jpg")
+        fig.write_image(f"series_{col}_2023_Nov.jpg")
     
     for col in columns:
         fig = px.box(data, y=col)
