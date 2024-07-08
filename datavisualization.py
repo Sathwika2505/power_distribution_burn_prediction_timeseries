@@ -31,7 +31,7 @@ def data_visualization():
         fig.update_layout(title=f"Plot of {col} January 2019", template='plotly_dark')
         fig.update_xaxes(showgrid=False, zeroline=False)
         fig.update_yaxes(showgrid=False, zeroline=False)
-        fig.write_image(f"series_{col}_2019_January.jpg")
+        fig.write_image(f"series_{col}_2021_January.jpg")
     
     start = DT.datetime(2021, 2, 1, 1, 0, 0)
     end = DT.datetime(2021, 2, 28, 23, 0, 0)
@@ -43,7 +43,7 @@ def data_visualization():
         fig.update_layout(title=f"Plot of {col} February 2019", template='plotly_dark')
         fig.update_xaxes(showgrid=False, zeroline=False)
         fig.update_yaxes(showgrid=False, zeroline=False)
-        fig.write_image(f"series_{col}_2019_February.jpg")
+        fig.write_image(f"series_{col}_2021_February.jpg")
     
     for col in columns:
         fig = px.box(data, y=col)
