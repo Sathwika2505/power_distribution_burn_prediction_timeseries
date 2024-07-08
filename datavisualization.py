@@ -22,25 +22,25 @@ def data_visualization():
     
     # Define start and end times for slicing
     start = DT.datetime(2021, 1, 1, 0, 0, 0)
-    end = DT.datetime(2021, 1, 31, 23, 0, 0)
+    end = DT.datetime(2021, 1, 15, 23, 0, 0)
     
     for col in columns:
         fig = go.Figure()
         sliced_data = data[(data.index >= start) & (data.index <= end)]
         fig.add_trace(go.Scatter(x=sliced_data.index, y=sliced_data[col], mode='lines', name=col))
-        fig.update_layout(title=f"Plot of {col} January 2019", template='plotly_dark')
+        fig.update_layout(title=f"Plot of {col} January 2021", template='plotly_dark')
         fig.update_xaxes(showgrid=False, zeroline=False)
         fig.update_yaxes(showgrid=False, zeroline=False)
         fig.write_image(f"series_{col}_2021_January.jpg")
     
     start = DT.datetime(2021, 2, 1, 1, 0, 0)
-    end = DT.datetime(2021, 2, 28, 23, 0, 0)
+    end = DT.datetime(2021, 2, 15, 23, 0, 0)
     
     for col in columns:
         fig = go.Figure()
         sliced_data = data[(data.index >= start) & (data.index <= end)]
         fig.add_trace(go.Scatter(x=sliced_data.index, y=sliced_data[col], mode='lines', name=col))
-        fig.update_layout(title=f"Plot of {col} February 2019", template='plotly_dark')
+        fig.update_layout(title=f"Plot of {col} February 2021", template='plotly_dark')
         fig.update_xaxes(showgrid=False, zeroline=False)
         fig.update_yaxes(showgrid=False, zeroline=False)
         fig.write_image(f"series_{col}_2021_February.jpg")
