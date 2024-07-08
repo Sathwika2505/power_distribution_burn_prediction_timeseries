@@ -6,7 +6,7 @@ def loading_data():
     s3 = boto3.client('s3')
 
     bucket_name = 'deeplearning-mlops-demo'
-    file_key = 'scada_2data.csv'
+    file_key = 'scada_6mnths_data.csv'
     response = s3.get_object(Bucket=bucket_name, Key=file_key)
     eeg_specs_data = response['Body'].read()
 
