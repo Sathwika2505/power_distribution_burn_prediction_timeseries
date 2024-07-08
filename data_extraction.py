@@ -11,7 +11,7 @@ def loading_data():
     eeg_specs_data = response['Body'].read()
 
     # Read the downloaded file using Pandas
-    df = pd.read_csv(io.BytesIO(eeg_specs_data))
+    df = pd.read_csv(io.BytesIO(eeg_specs_data), index_col = "Timestamp")
     df.index = pd.to_datetime(df.index)
     # Now you can work with the DataFrame 'df'
     print(df)
