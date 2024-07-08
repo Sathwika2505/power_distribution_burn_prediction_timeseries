@@ -34,7 +34,7 @@ def data_visualization():
         fig.write_image(f"series_{col}_2023_Oct.jpg")
     
     start = DT.datetime(2023, 11, 1, 1, 0, 0)
-    end = DT.datetime(202, 11, 15, 23, 0, 0)
+    end = DT.datetime(2023, 11, 15, 23, 0, 0)
     
     for col in columns:
         fig = go.Figure()
